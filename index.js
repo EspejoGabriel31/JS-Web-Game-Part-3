@@ -1,20 +1,30 @@
-function newImage(url, left, bottom){
-    let image = document.createElement('img')
-    image.src = url
+function move(image, left, bottom){
     image.style.position = 'fixed'
     image.style.left = left + 'px'
     image.style.bottom = bottom + 'px'
+
+}
+
+function newImage(url){
+    let image = document.createElement('img')
+    image.src = url
     document.body.append(image)
     return image
 }
 
-newImage('assets/green-character.gif', 100, 250)
-newImage('assets/tree.png', 200, 450)
-newImage('assets/pillar.png', 350, 250)
-newImage('assets/pine-tree.png', 450, 350)
-newImage('assets/crate.png', 150, 350)
-newImage('assets/well.png', 500, 575)
+let greencharacter = newImage('assets/green-character.gif')
+move(greencharacter, 100, 250)
+let tree = newImage('assets/tree.png')
+let pillar = newImage('assets/pillar.png')
+let pinetree = newImage('assets/pine-tree.png')
+let crate = newImage('assets/crate.png')
+let well = newImage('assets/well.png')
 
+move(tree, 200, 450)
+move(pillar, 350, 250)
+move(pinetree, 450, 350)
+move(crate, 150, 350)
+move(well, 500, 575)
 
 function newItem(url, left, bottom){
     let item = newImage(url, left, bottom)
